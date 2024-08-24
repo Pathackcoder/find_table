@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            height: 400px;
+            width: 85px;
+            margin: 10px;
+            font-size: larger;
+            font-weight: 800;
+            line-height: 30px;
+            color: blueviolet;
+            text-shadow: 1px 0.1px black;
+
+        }
+        
+
+        .container {
+            width: 250px;
+            height: 500px;
+            border: 2px solid black;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: azure;
+            box-shadow: 8px 8px;
+        }
+        
+        input{
+            font-size: larger;
+            text-align: center;
+            border-radius: 9px;
+            height: 20px;
+            width: 200px;
+            background-color: rgb(152, 190, 255);
+            border: 3px solid rgb(68, 86, 157);
+            color: rgb(59, 39, 39);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+       input:hover{
+        box-shadow: inset;cursor: pointer;
+        border:3px solid black;
+       }
+        h2{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Get Table</h2>
+        <input class="input" type="text">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        let input = document.querySelector('input');
+        let box = document.querySelector('.box');
+
+        input.addEventListener("input", () => {
+            box.textContent = multiply(input.value);
+        });
+
+        function multiply(a) {
+            return [
+                a + "x1=" + a * 1,
+                a + "x2=" + a * 2,
+                a + "x3=" + a * 3,
+                a + "x4=" + a * 4,
+                a + "x5=" + a * 5,
+                a + "x6=" + a * 6,
+                a + "x7=" + a * 7,
+                a + "x8=" + a * 8,
+                a + "x9=" + a * 9,
+                a + "x10=" + a * 10
+            ].join('\n');
+        }
+    </script>
+</body>
+</html>
